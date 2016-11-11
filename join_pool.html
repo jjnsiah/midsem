@@ -168,7 +168,7 @@ function popupcomplete(){
 }
 
     function popup(i,payment){
-      var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=5&pool_ID="+array[i].pool_ID+"&owner="+array[i].owner+"&username="+array[i].username+"&tel="+array[i].tel+"&payment="+payment+"&destination="+array[i].Destination+"&Max="+array[i].max;
+      var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/phpfiles/usrajax.php?cmd=5&pool_ID="+array[i].pool_ID+"&owner="+array[i].owner+"&username="+array[i].username+"&tel="+array[i].tel+"&payment="+payment+"&destination="+array[i].Destination+"&Max="+array[i].max;
       console.log(ajaxPageUrl);
       $.ajax(ajaxPageUrl,
         {async:true,complete:popupcomplete	});
@@ -176,7 +176,7 @@ function popupcomplete(){
     }
 
   function allpools(){
-    var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=4";
+    var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/phpfiles/usrajax.php?cmd=4";
     console.log(ajaxPageUrl);
     $.ajax(ajaxPageUrl,
       {async:true,complete:allPoolscomplete	}

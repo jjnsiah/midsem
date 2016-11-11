@@ -34,7 +34,7 @@ function view_pool(){
   include_once("user.php");
     $username	=$_REQUEST["username"];
     $obj= new user();
-    $results=obj->view_pool($username);
+    $results=$obj->view_pool($username);
     $row=$obj->fetch();
     if(!$row){
       echo '{"result":0,"message":"No available Pools"}';

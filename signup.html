@@ -157,7 +157,7 @@
       var password=$('#password').val();
       var cpass= $('#cpassword').val();
       if (password==cpass){
-      var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=1&username="+user+"&fname="+fname+"&lname="+lname+"&tel="+tel+"&password="+password;
+      var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/phpfiles/usrajax.php?cmd=1&username="+user+"&fname="+fname+"&lname="+lname+"&tel="+tel+"&password="+password;
       $.ajax(ajaxPageUrl,
         {async:true,complete:SignUpComplete	}
       );

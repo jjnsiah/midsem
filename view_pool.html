@@ -103,7 +103,7 @@
 <script>
 function view(){
   var username=sessionStorage.uname;
-  var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=6"+username;
+  var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/phpfiles/usrajax.php?cmd=6"+username;
   console.log(ajaxPageUrl);
   $.ajax(ajaxPageUrl,
     {async:true,complete:viewcomplete	}

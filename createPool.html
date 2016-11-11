@@ -157,7 +157,7 @@ function createPool(){
   var max=$('#plimit').val();
   var dest=$('#Destination').val();
   var loc= $('#Location').val();
-  var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=3&owner="+user+"&name="+pname+"&max="+max+"&destination="+dest+"&location="+loc;
+  var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/phpfiles/usrajax.php?cmd=3&owner="+user+"&name="+pname+"&max="+max+"&destination="+dest+"&location="+loc;
   console.log(ajaxPageUrl);
   $.ajax(ajaxPageUrl,
     {async:true,complete:createPoolComplete	}

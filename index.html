@@ -135,7 +135,7 @@
 function Login(){
 	var user=$('#username').val();
 	var password=$('#password').val();
-	var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=2&username="+user+"&password="+password;
+	var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/phpfiles/usrajax.php?cmd=2&username="+user+"&password="+password;
 	$.ajax(ajaxPageUrl,
 		{async:true,complete:LoginComplete	}
 	);
