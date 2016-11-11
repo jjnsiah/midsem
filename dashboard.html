@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+  <!-- Path to your custom app styles-->
+  <link rel="stylesheet"  href="css_/jquery.mobile.structure.css" />
+  <link rel="stylesheet" href="css_/jquery.mobile.theme.css" />
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css"  media="screen,projection"/>
+
+
+  <style>
+  @font-face{
+    font-family: deutsch;
+    src:url(London-Tube.ttf);
+  }
+
+  .p-text{
+    font-family: deutsch;
+    color:white!important;
+    font-size:20px;
+  }
+  </style>
+  <script>
+  var userAgent = navigator.userAgent + '';
+  if (userAgent.indexOf('iPhone') > -1) {
+    document.write('<script src="scripts/cordova-iphone.js"></sc' + 'ript>');
+    var mobile_system = 'iphone';
+  } else if (userAgent.indexOf('Android') > -1) {
+    document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+    var mobile_system = 'android';
+  } else {
+    var mobile_system = '';
+  }
+
+
+  </script>
+</head>
+<body>
+
+
+  <nav>
+    <div style="background-color:#ef5350!important"class="nav-wrapper">
+
+        <ul id="slide-out" class="side-nav">
+          <li><div class="userView">
+            <div class="background">
+              <img src="picture2.1.png">
+            </div>
+            <img  class="circle" style="width:30% ;display:block; margin:0 auto;"src="profile_icon.png">
+            <span id ="uname"style="text-align:center;"class="white-text name"> </span>
+          </div></li>
+
+            <span id="fname" style="color:dimgrey;font-family: deutsch!important;"> Name: </span>
+
+            <span id="lname" style="color:dimgrey;font-family: deutsch!important;"> </span>
+            <br/>
+            <span id="tel" style="color:dimgrey;font-family: deutsch!important;"> Tel:  </span>
+
+          <a href="logout.php"><h8 style="color:#ef5350;font-family: deutsch!important;">Logout</h5></a>
+
+        </ul>
+
+
+
+
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <h4 style=" color:white; font-size: 30px!important" class="brand-logo"><b> &#279B&#252R </b></h4>
+
+
+
+    </div>
+  </nav>
+  <br><br>
+
+  <div class="container" style="text-align:center; line-height:120px;">
+    <a href="createPool.html">
+    <div class="row">
+      <div class= "col s6"style="background-color:dimgrey!important; border:1px solid; border-color:gainsboro; height:130px;">
+        <p class="p-text"> Create Pool<p>
+
+      </div>
+      </a>
+    <a href="join_pool.html">
+      <div class= "col s6 " style="background-color:dimgrey!important; height:130px;  border:1px solid; border-color:gainsboro;">
+        <p class="p-text"> Join Pool<p>
+      </div>
+        </a>
+    </div>
+
+<a href="view_pool.html">
+    <div class="row">
+      <div class= "col s6"style="background-color:dimgrey!important; border:1px solid; border-color:gainsboro; height:130px;">
+        <p class="p-text"> View Pool<p>
+      </div>
+    </a>
+    <a href="location.html">
+      <div class= "col s6 " style="background-color:dimgrey!important; height:130px;  border:1px solid; border-color:gainsboro;">
+        <p class="p-text"> Map Location<p>
+      </div>
+    </div>
+  </a>
+
+<a href="">
+    <div class="row">
+      <div class= "col s6"style="background-color:dimgrey!important; border:1px solid; border-color:gainsboro; height:130px;">
+        <p class="p-text"> News Feed<p>
+      </div>
+      <div class= "col s6 " style="background-color:dimgrey!important; height:130px;  border:1px solid; border-color:gainsboro;">
+        <p class="p-text"> Bulksms<p>
+      </div>
+    </div>
+  </a>
+
+  </div>
+
+<script>
+var id =sessionStorage.id;
+var username=sessionStorage.uname;
+var fname=  sessionStorage.fname;
+console.log(fname);
+var lname= sessionStorage.lname;
+var tel=sessionStorage.tel;
+
+</script>
+
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="materialize.js"></script>
+
+  <script>
+  $('.button-collapse').sideNav({
+      menuWidth: 230, // Default is 240
+     // Choose the horizontal origin
+
+    }
+  );
+  $('#fname').append(fname);
+    $('#lname').append(lname);
+      $('#tel').append(tel);
+      $('#uname').append(username);
+
+  </script>
+
+
+
+</body>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+		<!-- Path to your custom app styles-->
+		<link rel="stylesheet"  href="css_/jquery.mobile.structure.css" />
+		<link rel="stylesheet" href="css_/jquery.mobile.theme.css" />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  media="screen,projection"/>
+			<link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>
+
+
+			<style>
+								::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+								color:   white!important;
+								opacity: 0.7;
+								font-family: deutsch!important;
+								}
+								:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+								color:    white!important;
+								opacity:  0.7;
+										font-family: deutsch!important;
+								}
+								::-moz-placeholder { /* Mozilla Firefox 19+ */
+								color:    white!important;
+								opacity:  0.7;
+								font-family: deutsch!important;
+								}
+								:-ms-input-placeholder { /* Internet Explorer 10-11 */
+								color:  white!important;
+								opacity: 0.7;
+								font-family: deutsch!important;
+								}
+								input{
+									border-bottom-color: white!important;
+								/*	border-bottom: 820px!important;*/
+
+								}
+								@font-face{
+									font-family: deutsch;
+									src:url(London-Tube.ttf);
+								}
+								.but1{
+									border-radius: 30px!important;
+									width: 50%!important;
+									background-color: #c62828 !important;
+									padding: 8px;
+									border: 	none;
+									font-family: deutsch!important;
+
+								}
+								#divStatus{
+									text-align: center;
+
+									color:white;
+									font-size:15px;
+									font-family:deutsch;
+								}
+
+			</style>
+
+         <script>
+			var userAgent = navigator.userAgent + '';
+			if (userAgent.indexOf('iPhone') > -1) {
+				document.write('<script src="scripts/cordova-iphone.js"></sc' + 'ript>');
+				var mobile_system = 'iphone';
+			} else if (userAgent.indexOf('Android') > -1) {
+				document.write('<script src="scripts/cordova-android.js"></sc' + 'ript>');
+				var mobile_system = 'android';
+			} else {
+				var mobile_system = '';
+			}
+		</script>
+
+
+    	<title>EiBur</title>
+
+    </head>
+		<body style="background-image:url('picture2.png');">
+			<br/>
+
+			<div style="text-align:center;">
+
+				<br/><br/><br/><br/>
+			<h1 style="color:white !important; ">&#279B&#252R </h1>
+		</div>
+
+		<div class="container" >
+	<br/><br/><br/><br/><br/><br/>
+	<div id="divStatus">
+
+	</div>
+
+		<div style="text-align:center;color:white!important;">
+		<input id="username" style="color:#ffffff!important;width:80%;" placeholder="username"/>
+
+		<input type="password" id="password" style="color:white!important;width:80%;" placeholder="password"/>
+		<br><br>
+
+		<button class="btn waves-effect waves-light" style="background-color:#c62828!important;font-family: deutsch!important; border-radius:10px"
+		type="submit"   onclick="Login()" >login </button>
+		<br/><br/>
+		<p style="color:white!important;font-family: deutsch!important;"> Don't have an account? <b> <a style="color:white!important;"href="signup.html">Sign Up </a>  </b></p>
+	</div>
+</div>
+
+<script>
+  function LoginComplete(xhr,status){
+		if(status!="success"){
+
+			$('#divStatus').html("Log in Error");
+			return;
+		}
+
+		var obj=$.parseJSON(xhr.responseText);
+
+
+			if(obj.result!=0){
+						sessionStorage.id=obj.ID;
+						sessionStorage.uname=obj.username;
+						sessionStorage.fname=obj.fname;
+						sessionStorage.lname=obj.lname;
+						sessionStorage.tel=obj.tel;
+
+				window.location.href="dashboard.html";
+	}
+	else{
+			$('#divStatus').html("Log in Error");
+	}
+}
+
+function Login(){
+	var user=$('#username').val();
+	var password=$('#password').val();
+	var ajaxPageUrl="http:/52.89.116.219/~joseph.nsiah/usrajax.php?cmd=2&username="+user+"&password="+password;
+	$.ajax(ajaxPageUrl,
+		{async:true,complete:LoginComplete	}
+	);
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+						<script type="text/javascript" src="js_/jquery-1.12.1.js"></script>
+      			<script type="text/javascript" src="scripts/platformOverrides.js"></script>
+      			<script type="text/javascript" src="scripts/index.js"></script>
+						<script type="text/javascript" src="js/bootstrap.min.js"></script>
+							<script type="text/javascript" src="materialize.js"></script>
+    </body>
+
+	</html>
